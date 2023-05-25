@@ -8,15 +8,19 @@ export default function Projects({ projectsData }) {
 
   return (
     <Layout>
-      <Head>
-        <title>프로젝트 | 다솜이 포트폴리오</title>
-        <meta name="description" content="프론트엔드 개발자 다솜이의 포트폴리오" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1>총 프로젝트 : {projectsData.length}</h1>
-      {projectsData.map(project => (
-        <ProjectItem key={project.id} data={project} />
-      ))}
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 mb-10">
+        <Head>
+          <title>프로젝트 | 다솜이 포트폴리오</title>
+          <meta name="description" content="프론트엔드 개발자 다솜이의 포트폴리오" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <h1 className="text-4xl font-bold sm:text-6xl">총 프로젝트 : <span className="text-pink-500">{projectsData.length}</span></h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 py-10 m-6 gap-8 w-full">
+          {projectsData.map(project => (
+            <ProjectItem key={project.id} data={project} />
+          ))}
+        </div>
+      </div>
     </Layout>
   )
 }

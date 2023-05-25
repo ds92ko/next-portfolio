@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     <div className="bg-primary">
       <Header />
       <main>
-        <div>{children}</div>
+        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">{children}</div>
       </main>
       <Footer />
     </div>
